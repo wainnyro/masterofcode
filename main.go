@@ -11,13 +11,13 @@ import (
 // API to get symnonym of words
 
 func main() {
-	http.HandleFunc("/", getWordSymnonym{})
+	http.HandleFunc("/", getWordSymnonym)
 	log.Fatal(http.ListenAndServe(getPort(), nil))
 }
 
 // Function to handle / endpoint
-func getWordSymnonym(ww http.ResponseWriter, r *http.Request) {
-	BIG_HUGE_LABS_URL = "http://words.bighugelabs.com/api/2/6d1907189a886a851caba6c96ea972db/%s/json"
+func getWordSymnonym(w http.ResponseWriter, r *http.Request) {
+	BIG_HUGE_LABS_URL := "http://words.bighugelabs.com/api/2/6d1907189a886a851caba6c96ea972db/%s/json"
 	paramQArray := (r.URL.Query()["q"])
 
 	if len(paramQArray) > 0 {
